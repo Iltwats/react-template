@@ -4,11 +4,20 @@ description: This repository is for trying version migration
 branding:
   icon: airplay
   color: green
+  
+inputs:
+  - name: GIT_TOKEN
+    description: Enter Your Token
+    is-secret: true
+    required: true
     
 configs:
   repo-metadata:
     parameters:
       description: 'A react-app template'
+      secrets: 
+          - name: GIT_TOKEN
+            value: ${{inputs.GIT_TOKEN}}
       topics:
         - react-app
         - nodejs
